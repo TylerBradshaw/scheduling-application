@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="810.0" maxWidth="1440.0" minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddAppointmentController">
+      <children>
+          <Label layoutX="75.0" layoutY="45.0" text="U-schedule">
+              <font>
+                  <Font name="System Bold" size="16.0" />
+              </font>
+          </Label>
+          <BorderPane layoutX="74.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="1255.0">
+              <bottom>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <buttons>
+                        <ButtonBar prefHeight="40.0" prefWidth="261.0">
+                            <buttons>
+                                <Button layoutX="426.0" layoutY="18.0" mnemonicParsing="false" onAction="#saveClicked" prefHeight="25.0" prefWidth="153.0" text="Save Appointment" />
+                                <Button layoutX="341.0" layoutY="18.0" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                            </buttons>
+                        </ButtonBar>
+               </buttons>
+                  </ButtonBar>
+              </bottom>
+              <left>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </left>
+              <right>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER">
+                      <opaqueInsets>
+                          <Insets />
+                      </opaqueInsets>
+                  </Separator>
+              </right>
+              <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+              </opaqueInsets>
+         <top>
+                <Label contentDisplay="CENTER" text="New Appointment" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="appointmentId" disable="true" layoutX="168.0" layoutY="79.0" promptText="Auto-Gen Disabled" />
+                  <TextField fx:id="appointmentTitle" layoutX="168.0" layoutY="129.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField fx:id="appointmentDescription" layoutX="168.0" layoutY="179.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField fx:id="appointmentLocation" layoutX="168.0" layoutY="229.0" />
+                  <TextField fx:id="appointmentType" layoutX="485.0" layoutY="229.0" />
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="83.0" prefHeight="17.0" prefWidth="170.0" text="Appointment ID">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="133.0" prefHeight="17.0" prefWidth="168.0" text="Title">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="183.0" prefHeight="17.0" prefWidth="167.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Location">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Type">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="appointmentCustomerId" layoutX="168.0" layoutY="411.0" prefWidth="150.0" promptText="Customer" />
+                  <ComboBox fx:id="appointmentUserId" layoutX="484.0" layoutY="411.0" prefWidth="150.0" promptText="User" />
+                  <Label alignment="CENTER" layoutY="282.0" prefHeight="17.0" prefWidth="169.0" text="Start Time">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="318.0" layoutY="282.0" prefHeight="17.0" prefWidth="169.0" text="End Time">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="appointmentDate" layoutX="334.0" layoutY="79.0" promptText="Date" />
+                  <ComboBox fx:id="appointmentContactId" layoutX="537.0" layoutY="79.0" prefWidth="150.0" promptText="Contact" />
+                  <ComboBox fx:id="appointmentStartTime" disable="true" layoutX="168.0" layoutY="278.0" prefWidth="150.0" promptText="Please Select Date" />
+                  <ComboBox fx:id="appointmentEndTime" disable="true" layoutX="484.0" layoutY="278.0" prefWidth="150.0" promptText="Please Select Date" />
+               </children>
+            </Pane>
+         </center>
+          </BorderPane>
+      <SplitMenuButton layoutX="1351.0" layoutY="14.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Reports" />
+          <MenuItem mnemonicParsing="false" text="Log Out" />
+            <MenuItem mnemonicParsing="false" onAction="#exitClicked" text="Exit" />
+        </items>
+      </SplitMenuButton>
+      </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="810.0" maxWidth="1440.0" minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+      <children>
+          <Label layoutX="75.0" layoutY="45.0" text="U-schedule">
+              <font>
+                  <Font name="System Bold" size="16.0" />
+              </font>
+          </Label>
+          <BorderPane layoutX="74.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="322.0" prefWidth="1255.0">
+              <bottom>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <buttons>
+                          <Button fx:id="addAppointment" mnemonicParsing="false" onAction="#addAppointmentClicked" text="Add" />
+                          <Button fx:id="modifyAppointment" layoutX="426.0" layoutY="18.0" mnemonicParsing="false" onAction="#modifyAppointmentClicked" text="Modify" />
+                          <Button fx:id="deleteAppointment" layoutX="341.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteAppointmentClicked" text="Delete" />
+                      </buttons>
+                  </ButtonBar>
+              </bottom>
+              <left>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </left>
+              <right>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER">
+                      <opaqueInsets>
+                          <Insets />
+                      </opaqueInsets>
+                  </Separator>
+              </right>
+              <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+              </opaqueInsets>
+              <center>
+                  <TableView fx:id="appointmentTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <columns>
+                          <TableColumn fx:id="apptId" prefWidth="52.0" text="ID" />
+                          <TableColumn fx:id="apptTitle" prefWidth="66.0" text="Title" />
+                          <TableColumn fx:id="apptDesc" minWidth="0.0" prefWidth="240.0" text="Description" />
+                          <TableColumn fx:id="apptLocation" prefWidth="120.0" text="Location" />
+                  <TableColumn fx:id="apptType" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="apptStart" prefWidth="75.0" text="Starts" />
+                  <TableColumn fx:id="apptEnd" prefWidth="75.0" text="Ends" />
+                  <TableColumn fx:id="apptCustId" prefWidth="69.0" text="Customer" />
+                  <TableColumn fx:id="apptUserId" prefWidth="75.0" text="User" />
+                  <TableColumn fx:id="apptContactId" prefWidth="89.0" text="Contact" />
+                      </columns>
+                  </TableView>
+              </center>
+         <top>
+                <Label text="Appointments" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+         </top>
+          </BorderPane>
+          <BorderPane layoutX="75.0" layoutY="413.0" prefHeight="322.0" prefWidth="1255.0">
+              <bottom>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <buttons>
+                          <Button fx:id="addCustomer" mnemonicParsing="false" onAction="#addCustomerClicked" text="Add" />
+                          <Button fx:id="modifyCustomer" layoutX="426.0" layoutY="18.0" mnemonicParsing="false" onAction="#modifyCustomerClicked" text="Modify" />
+                          <Button fx:id="deleteCustomer" layoutX="341.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteCustomerClicked" text="Delete" />
+                      </buttons>
+                  </ButtonBar>
+              </bottom>
+              <left>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </left>
+              <right>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </right>
+              <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+              </opaqueInsets>
+              <center>
+                  <TableView fx:id="customerTable" prefHeight="200.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+                      <columns>
+                          <TableColumn fx:id="customerId" prefWidth="69.0" text="ID" />
+                          <TableColumn fx:id="customerName" prefWidth="165.0" text="Name" />
+                          <TableColumn fx:id="customerAddress" minWidth="0.0" prefWidth="173.0" text="Address" />
+                          <TableColumn fx:id="customerPostal" prefWidth="142.0" text="Postal Code" />
+                  <TableColumn fx:id="customerPhone" prefWidth="135.0" text="Phone" />
+                  <TableColumn fx:id="customerDivisionId" prefWidth="126.0" text="First Division" />
+                      </columns>
+                  </TableView>
+              </center>
+         <top>
+                <Label text="Customers" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+         </top>
+          </BorderPane>
+      <SplitMenuButton layoutX="1351.0" layoutY="14.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Reports" />
+          <MenuItem mnemonicParsing="false" text="Log Out" />
+            <MenuItem mnemonicParsing="false" onAction="#exitClicked" text="Exit" />
+        </items>
+      </SplitMenuButton>
+      </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

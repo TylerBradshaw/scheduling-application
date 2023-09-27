@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="810.0" maxWidth="1440.0" minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifyCustomerController">
+      <children>
+          <Label layoutX="75.0" layoutY="45.0" text="U-schedule">
+              <font>
+                  <Font name="System Bold" size="16.0" />
+              </font>
+          </Label>
+          <BorderPane layoutX="75.0" layoutY="95.0" prefHeight="640.0" prefWidth="1255.0">
+              <bottom>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <buttons>
+                          <Button mnemonicParsing="false" onAction="#addCustomerClicked" text="Save Changes" />
+                  <Button mnemonicParsing="false" onAction="#addCustomerClicked" text="Cancel" />
+                      </buttons>
+                  </ButtonBar>
+              </bottom>
+              <left>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </left>
+              <right>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </right>
+              <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+              </opaqueInsets>
+         <top>
+                <Label text="Edit Customer" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField disable="true" layoutX="485.0" layoutY="363.0" />
+                  <TextField disable="true" layoutX="168.0" layoutY="363.0" />
+                  <TextField disable="true" layoutX="168.0" layoutY="79.0" promptText="Auto-Gen Disabled" />
+                  <TextField layoutX="168.0" layoutY="129.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField layoutX="168.0" layoutY="179.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField layoutX="168.0" layoutY="229.0" />
+                  <TextField layoutX="485.0" layoutY="229.0" />
+                  <TextField disable="true" layoutX="168.0" layoutY="318.0" />
+                  <TextField disable="true" layoutX="486.0" layoutY="318.0" />
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="83.0" prefHeight="17.0" prefWidth="170.0" text="Customer ID">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="133.0" prefHeight="17.0" prefWidth="168.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="183.0" prefHeight="17.0" prefWidth="167.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Phone Number">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="322.0" prefHeight="17.0" prefWidth="170.0" text="Date Created">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="322.0" prefHeight="17.0" prefWidth="170.0" text="Created By">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="367.0" prefHeight="17.0" prefWidth="169.0" text="Last Updated">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="367.0" prefHeight="17.0" prefWidth="169.0" text="Updated By">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Postal Code">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="167.0" layoutY="273.0" prefWidth="150.0" promptText="Country" />
+                  <ComboBox layoutX="485.0" layoutY="273.0" prefWidth="150.0" promptText="Division" />
+                  <BorderPane layoutX="651.0" layoutY="104.0" prefHeight="307.0" prefWidth="592.0">
+                     <center>
+                        <TableView prefHeight="200.0" prefWidth="592.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="54.0" text="ID" />
+                            <TableColumn prefWidth="108.0" text="Title" />
+                              <TableColumn prefWidth="216.0" text="Description" />
+                              <TableColumn prefWidth="103.0" text="Starts" />
+                              <TableColumn prefWidth="109.0" text="Ends" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <Label layoutX="863.0" layoutY="73.0" text="Customer's Appointments">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ButtonBar layoutX="964.0" layoutY="411.0" prefHeight="40.0" prefWidth="200.0" />
+                  <Button layoutX="1098.0" layoutY="419.0" mnemonicParsing="false" text="Delete Appointment" />
+               </children>
+            </Pane>
+         </center>
+          </BorderPane>
+      <SplitMenuButton layoutX="1351.0" layoutY="14.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Reports" />
+          <MenuItem mnemonicParsing="false" text="Log Out" />
+            <MenuItem mnemonicParsing="false" onAction="#exitClicked" text="Exit" />
+        </items>
+      </SplitMenuButton>
+      </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

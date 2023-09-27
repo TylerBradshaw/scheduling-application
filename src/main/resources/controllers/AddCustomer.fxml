@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="810.0" maxWidth="1440.0" minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddCustomerController">
+      <children>
+          <Label layoutX="75.0" layoutY="45.0" text="U-schedule">
+              <font>
+                  <Font name="System Bold" size="16.0" />
+              </font>
+          </Label>
+          <BorderPane layoutX="75.0" layoutY="95.0" prefHeight="640.0" prefWidth="1255.0">
+              <bottom>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <buttons>
+                          <Button mnemonicParsing="false" onAction="#saveClicked" text="Save Customer" />
+                  <Button mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                      </buttons>
+                  </ButtonBar>
+              </bottom>
+              <left>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </left>
+              <right>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+              </right>
+              <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+              </opaqueInsets>
+         <top>
+                <Label text="New Customer" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="customerID" disable="true" layoutX="168.0" layoutY="79.0" promptText="Auto-Gen Disabled" />
+                  <TextField fx:id="customerName" layoutX="168.0" layoutY="129.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField fx:id="customerAddress" layoutX="168.0" layoutY="179.0" prefHeight="25.0" prefWidth="465.0" />
+                  <TextField fx:id="customerPhone" layoutX="168.0" layoutY="229.0" />
+                  <TextField fx:id="customerPostal" layoutX="485.0" layoutY="229.0" />
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="83.0" prefHeight="17.0" prefWidth="170.0" text="Customer ID">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="133.0" prefHeight="17.0" prefWidth="168.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="183.0" prefHeight="17.0" prefWidth="167.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Phone Number">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="233.0" prefHeight="17.0" prefWidth="169.0" text="Postal Code">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="customerCountryId" layoutX="650.0" layoutY="179.0" prefWidth="150.0" promptText="Country" />
+                  <ComboBox fx:id="customerDivisionId" disable="true" layoutX="650.0" layoutY="229.0" prefWidth="150.0" promptText="Division" />
+               </children>
+            </Pane>
+         </center>
+          </BorderPane>
+      <SplitMenuButton layoutX="1351.0" layoutY="14.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Reports" />
+          <MenuItem mnemonicParsing="false" text="Log Out" />
+            <MenuItem mnemonicParsing="false" onAction="#exitClicked" text="Exit" />
+        </items>
+      </SplitMenuButton>
+      </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>
